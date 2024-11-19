@@ -1,0 +1,393 @@
+$font: 'Times New Roman', serif;
+$icon-font: 'font-awesome';
+
+$color-b: #000000;
+$color-w: #FFFFFF;
+$color-pp: #43045c;
+$color-p: #b774ef;
+$color-gr: #1B1B1B;
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: $font;
+}
+
+/*Header*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    height: 10vh;
+    background-color: $color-b;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    height: 10vh;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.logo {
+    width: 50%;
+    padding-left: 2%;
+}
+
+.header-menu {
+    width: 50%;
+    padding-right: 2%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-options {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+}
+
+.header-options a {
+    text-decoration: none;
+    color: $color-w;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.header-options a:hover {
+    color: $color-p;
+}
+
+.option-item {
+    width: auto;
+}
+
+/*Main*/
+
+//Welcome
+
+.welcome {
+    height: 100vh;
+    background-color: $color-w;
+}
+
+#image-background {
+    position: relative;
+    height: 100%;
+    background: url('../assets/imgs/space-welcome.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(131, 28, 215, 0.2), rgba(131, 28, 215, 0.5));
+        z-index: 1;
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: $color-w;
+    font-family: $font;
+}
+
+.content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.scroll-button {
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    cursor: pointer;
+}
+
+.scroll-button a {
+    text-decoration: none;
+    color: $color-pp;
+    font-family: $font;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: color 1.0s ease;
+}
+
+.default-icon {
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.hover-icon {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-button span {
+    font-size: 1.0rem;
+    font-weight: 400;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-button:hover .default-icon {
+    opacity: 0;
+}
+
+.scroll-button:hover .hover-icon {
+    opacity: 1;
+}
+
+.scroll-button:hover span {
+    opacity: 1;
+}
+
+.scroll-button:hover a {
+    color: $color-w;
+}
+
+//Welcome
+
+//About Me
+
+#about-me {
+    background-color: $color-gr;
+    color: $color-w;
+    padding: 50px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .about-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        flex: 1;
+        max-width: 600px;
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .underline {
+            width: 60px;
+            border: none;
+            height: 3px;
+            background-color: $color-pp;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 1rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .about-image {
+        flex: 1;
+        max-width: 400px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(27, 27, 27, 0.5);
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+    }
+}//About Me
+
+//Skills
+
+#skills {
+    height: 100vh;
+    background-color: $color-w;
+
+    #image-skills-background {
+        position: relative;
+        height: 100%;
+        background: url('../assets/imgs/planets.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+        }
+
+        .title-skills {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: $color-w;
+
+            h1 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+                font-family: $font;
+            }
+
+            .underline {
+                width: 60px;
+                border: none;
+                height: 3px;
+                background-color: $color-pp;
+                margin: 0 auto;
+            }
+        }
+    }
+}//Skills
+
+/*Footer*/
+
+footer {
+    display: flex;
+    height: 40vh;
+    width: 100vw;
+    background-color: $color-b;
+}
+
+#contact-me {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.information-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.information-contact h2 {
+    font-family: $font;
+    padding-top: 40%;
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    color: $color-w;
+}
+
+.profiles {
+    width: 80%;
+    margin-bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-media {
+    width: 60%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 50px;
+    overflow: visible;
+}
+
+.social-media li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.social-media svg {
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.social-media li:hover {
+    transform: scale(1.2);
+}
+
+.social-media a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        fill: $color-w;
+        transition: transform 0.3s ease, fill 0.3s ease;
+    }
+
+    &:hover svg {
+        fill: $color-p;
+    }
+}
+
+.legend {
+    display: flex;
+    width: 100%;
+    color: $color-w;
+    justify-content: center;
+}
+
+.legend p {
+    text-align: center;
+}
