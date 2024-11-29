@@ -74,7 +74,7 @@ header.scrolled {
 
 .option-item {
     width: auto;
-}
+}//Header
 
 /*Main*/
 
@@ -181,9 +181,7 @@ header.scrolled {
 
 .scroll-button:hover a {
     color: $color-w;
-}
-
-//Welcome
+}//Welcome
 
 //About Me
 
@@ -258,6 +256,7 @@ header.scrolled {
 #skills {
     height: 100vh;
     background-color: $color-w;
+    overflow: hidden;
 
     #image-skills-background {
         position: relative;
@@ -266,9 +265,6 @@ header.scrolled {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         &::before {
             content: '';
@@ -280,29 +276,281 @@ header.scrolled {
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
             z-index: 1;
         }
+    }
 
-        .title-skills {
-            position: relative;
-            z-index: 2;
-            text-align: center;
+    .title-skills {
+        text-align: left;
+        color: $color-w;
+        padding-left: 15.2%;
+
+        .title-section {
+            font-size: 3rem;
+            margin-top: 95px;
+            margin-bottom: 20px;
             color: $color-w;
+        }
 
-            h1 {
-                font-size: 3rem;
-                margin-bottom: 20px;
-                font-family: $font;
+        .underline {
+            width: 60px;
+            border: none;
+            height: 3px;
+            background-color: $color-pp;
+            margin-bottom: 20px;
+        }
+    }
+
+    .skills-categories {
+        display: flex;
+        justify-content: center;
+        height: 59%;
+        width: 97%;
+        gap: 10%;
+        padding: 20px;
+
+        .skills-category {
+            background: rgba($color-b, 0.3);
+            border-radius: 20px;
+            padding: 20px;
+            width: 230px;
+            justify-content: center;
+            text-align: center;
+
+            h2 {
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+                color: $color-w;
             }
 
-            .underline {
-                width: 60px;
-                border: none;
-                height: 3px;
-                background-color: $color-pp;
-                margin: 0 auto;
+            ul {
+                list-style: none;
+                padding-top: 20px;
+                margin: 0;
+
+                li {
+                    margin-bottom: 22px;
+                    color: $color-w;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
             }
         }
     }
+
+    @media (max-width: 768px) {
+        .skills-categories {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 }//Skills
+
+//Experience
+
+#experience {
+    min-height: 100vh;
+    background-color: $color-gr;
+    padding: 0 10% 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title-experience {
+        text-align: center;
+
+        .title-section {
+            color: $color-w;
+            font-size: 3rem;
+            margin-top: 95px;
+            margin-bottom: 20px;
+        }
+
+        .underline {
+            width: 60px;
+            border: none;
+            height: 3px;
+            background-color: $color-pp;
+            margin-bottom: 20px;
+        }
+    }
+
+    .timeline {
+        position: relative;
+        width: 100%;
+        padding: 20px 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: $color-p;
+        }
+    }
+
+    .timeline-item {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 50px;
+
+        &:nth-child(odd) {
+            justify-content: flex-start;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 20px;
+            margin-bottom: 30px;
+            background: rgba($color-w, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: rgba($color-p, 0.1);
+            }
+
+            h2 {
+                font-size: 1.4rem;
+                color: $color-w;
+            }
+
+            p {
+                font-size: 1rem;
+                color: $color-w;
+                line-height: 1.4;
+            }
+
+            .date {
+                display: block;
+                margin-top: 10px;
+                font-size: 0.85rem;
+                color: $color-p;
+            }
+        }
+
+        .timeline-icon {
+            position: absolute;
+            top: 30px;
+            left: calc(50% - 15px);
+            width: 30px;
+            height: 30px;
+            background-color: $color-p;
+            border-radius: 50%;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}//Experience
+
+//Projects
+
+#projects {
+    height: 100vh;
+    background-color: $color-w;
+    overflow: hidden;
+
+    #image-projects-background {
+        position: relative;
+        height: 100%;
+        background: url('../assets/imgs/earth.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+        }
+    }
+
+    .title-skills {
+        text-align: left;
+        color: $color-w;
+        padding-left: 15.2%;
+
+        .title-section {
+            font-size: 3rem;
+            margin-top: 95px;
+            margin-bottom: 20px;
+            color: $color-w;
+        }
+
+        .underline {
+            width: 60px;
+            border: none;
+            height: 3px;
+            background-color: $color-pp;
+            margin-bottom: 20px;
+        }
+    }
+
+    .carousel-container {
+        position: relative;
+        max-width: 100%;
+        height: 60vh;
+        overflow: hidden;
+
+        .carousel-slide {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.5s ease;
+            opacity: 0;
+            height: 100%;
+
+            &.active {
+                opacity: 1;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+
+            .carousel-caption {
+                position: absolute;
+                bottom: 3%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 39%;
+                background-color: rgba(0, 0, 0, 0.4);
+                color: $color-w;
+                text-align: center;
+                padding: 20px;
+            }
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            z-index: 10;
+            background: none;
+            border: none;
+            color: $color-w;
+            font-size: 24px;
+            cursor: pointer;
+
+            &.prev { left: 10px; }
+            &.next { right: 10px; }
+        }
+    }
+}//Projects
 
 /*Footer*/
 
@@ -390,4 +638,4 @@ footer {
 
 .legend p {
     text-align: center;
-}
+}//Footer

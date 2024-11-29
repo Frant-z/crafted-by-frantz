@@ -228,41 +228,16 @@ header.scrolled {
 
 #skills {
   height: 100vh;
-  background-color: #1B1B1B;
-  color: #FFFFFF;
-  padding: 50px 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#skills .title-skills {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 1200px;
-  width: 100%;
-}
-#skills .title-skills h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  font-family: "Times New Roman", serif;
-}
-#skills .title-skills .underline {
-  width: 60px;
-  border: none;
-  height: 3px;
-  background-color: #43045c;
-  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  overflow: hidden;
 }
 #skills #image-skills-background {
+  position: relative;
+  height: 100%;
   background: url("../assets/imgs/planets.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  padding: 50px 0;
 }
 #skills #image-skills-background::before {
   content: "";
@@ -274,10 +249,244 @@ header.scrolled {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
   z-index: 1;
 }
-#skills #image-skills-background .title-skills {
-  position: relative;
-  z-index: 2;
+#skills .title-skills {
   text-align: left;
+  color: #FFFFFF;
+  padding-left: 15.2%;
+}
+#skills .title-skills .title-section {
+  font-size: 3rem;
+  margin-top: 95px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+#skills .title-skills .underline {
+  width: 60px;
+  border: none;
+  height: 3px;
+  background-color: #43045c;
+  margin-bottom: 20px;
+}
+#skills .skills-categories {
+  display: flex;
+  justify-content: center;
+  height: 59%;
+  width: 97%;
+  gap: 10%;
+  padding: 20px;
+}
+#skills .skills-categories .skills-category {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 20px;
+  width: 230px;
+  justify-content: center;
+  text-align: center;
+}
+#skills .skills-categories .skills-category h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #FFFFFF;
+}
+#skills .skills-categories .skills-category ul {
+  list-style: none;
+  padding-top: 20px;
+  margin: 0;
+}
+#skills .skills-categories .skills-category ul li {
+  margin-bottom: 22px;
+  color: #FFFFFF;
+}
+#skills .skills-categories .skills-category ul li:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  #skills .skills-categories {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#experience {
+  min-height: 100vh;
+  background-color: #1B1B1B;
+  padding: 0 10% 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#experience .title-experience {
+  text-align: center;
+}
+#experience .title-experience .title-section {
+  color: #FFFFFF;
+  font-size: 3rem;
+  margin-top: 95px;
+  margin-bottom: 20px;
+}
+#experience .title-experience .underline {
+  width: 60px;
+  border: none;
+  height: 3px;
+  background-color: #43045c;
+  margin-bottom: 20px;
+}
+#experience .timeline {
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+}
+#experience .timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #b774ef;
+}
+#experience .timeline-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 50px;
+}
+#experience .timeline-item:nth-child(odd) {
+  justify-content: flex-start;
+}
+#experience .timeline-item .timeline-content {
+  width: 45%;
+  padding: 20px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+#experience .timeline-item .timeline-content:hover {
+  background-color: rgba(183, 116, 239, 0.1);
+}
+#experience .timeline-item .timeline-content h2 {
+  font-size: 1.4rem;
+  color: #FFFFFF;
+}
+#experience .timeline-item .timeline-content p {
+  font-size: 1rem;
+  color: #FFFFFF;
+  line-height: 1.4;
+}
+#experience .timeline-item .timeline-content .date {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #b774ef;
+}
+#experience .timeline-item .timeline-icon {
+  position: absolute;
+  top: 30px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  background-color: #b774ef;
+  border-radius: 50%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#projects {
+  height: 100vh;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+#projects #image-projects-background {
+  position: relative;
+  height: 100%;
+  background: url("../assets/imgs/earth.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#projects #image-projects-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  z-index: 1;
+}
+#projects .title-skills {
+  text-align: left;
+  color: #FFFFFF;
+  padding-left: 15.2%;
+}
+#projects .title-skills .title-section {
+  font-size: 3rem;
+  margin-top: 95px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+#projects .title-skills .underline {
+  width: 60px;
+  border: none;
+  height: 3px;
+  background-color: #43045c;
+  margin-bottom: 20px;
+}
+#projects .carousel-container {
+  position: relative;
+  max-width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+#projects .carousel-container .carousel-slide {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+  opacity: 0;
+  height: 100%;
+}
+#projects .carousel-container .carousel-slide.active {
+  opacity: 1;
+}
+#projects .carousel-container .carousel-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+#projects .carousel-container .carousel-slide .carousel-caption {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 39%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+}
+#projects .carousel-container .carousel-control {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 24px;
+  cursor: pointer;
+}
+#projects .carousel-container .carousel-control.prev {
+  left: 10px;
+}
+#projects .carousel-container .carousel-control.next {
+  right: 10px;
 }
 
 /*Footer*/
